@@ -1,3 +1,4 @@
+# Codemixing Data Construction (WMT24pp)
 
-How to construct a codemixing data out of google wmt24pp using the codemixing dictionary:
-https://colab.research.google.com/drive/1mN3aUPmxpjqoSOMW9xFRDY55QckjOdIe?usp=sharing
+This repository provides tools for constructing codemixed data out of the **Google WMT24pp** dataset using a codemixing dictionary.  
+[Colab Notebook](https://colab.research.google.com/drive/1mN3aUPmxpjqoSOMW9xFRDY55QckjOdIe?usp=sharing)
