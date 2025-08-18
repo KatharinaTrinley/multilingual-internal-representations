@@ -11,15 +11,20 @@ Large language models (LLMs) excel at multilingual tasks, yet their internal lan
 ├── src/
 │   ├── logit_lens/           # Logit lens analysis code
 │   ├── neuron_analysis/      # Neuron specialization experiments
+│   │   ├── tan_method/       # Activation frequency analysis (Tan et al.)
+│   │   └── kojima_method/    # Activation strength analysis (Kojima et al.)
 │   ├── code_mixing/          # Code-mixed dataset creation
+│   └── utils/               # Helper functions and utilities
 ├── data/
 │   ├── code_mixed_dataset/   # Our code-mixed dataset (released on huggingface or here)
 │   └── sample_data/         # Sample data for testing (maybe add, if time allows)
 ├── experiments/
 │   ├── logit_lens_results/   # Results from logit lens experiments
 │   ├── neuron_results/       # Neuron specialization results
+│   │   ├── tan_results/      # IoU matrices, frequency analysis
+│   │   └── kojima_results/   # AP scores, layer distribution
 │   └── additional_figures/   # Extra visualizations not in paper
-├── requirements.txt
+├── requirements.txt          # requirements
 └── LICENSE
 ```
 
