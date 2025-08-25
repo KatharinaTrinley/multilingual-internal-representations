@@ -1,1 +1,15 @@
-#add requirements here. Possibly multiple for different exps necessary.
+git+https://github.com/huggingface/transformers.git
+bitsandbytes
+transformers
+peft
+accelerate
+trl datasets
+sentencepiece
+wandb
+mecab-python3
+unidic-lite
+konlpy
+unsloth
+torchvision
+python-mecab-ko
+flash-attn
