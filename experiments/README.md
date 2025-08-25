@@ -22,7 +22,7 @@ Below are sample results from the logit lens experiments:
 ---
 
 ## ⚙️ How to Run
-A Colab notebook is provided for preprocessing and running the experiments:  
+A Colab notebook is provided for dataset preprocessing:  
 👉 [Colab Notebook](https://colab.research.google.com/drive/1jNmV8aH1bI93lj6WjRzlqT76c5dCoWF3?usp=sharing)
 
 ### Steps
@@ -52,7 +52,7 @@ It provides resources, experiments, and results on **codemixed data generation**
 
 ## 🚀 Overview
 - Construct codemixed datasets from WMT24pp using a codemixing dictionary  
-- Train and evaluate machine translation systems under codemixing conditions  
+- Evaluate zero-shot machine translation systems under codemixing conditions (codemixing-to-en)
 - Compare translation results across multiple language pairs  
 
 👉 For step-by-step instructions on dataset construction, check the [Colab Notebook](https://colab.research.google.com/drive/1mN3aUPmxpjqoSOMW9xFRDY55QckjOdIe?usp=sharing).
@@ -73,7 +73,8 @@ It provides resources, experiments, and results on **codemixed data generation**
 
 # 🔬 Activation Frequency Experiments
 
-This section investigates **neuron activation frequency and specialization** in multilingual and codemixed machine translation models.  
+This section investigates **neuron activation frequency and specialization** in multilingual and codemixed machine translation models. 
+
 We build on previous work to analyze how neurons activate differently across **languages** and **codemixing conditions**.
 
 ---
@@ -100,16 +101,29 @@ Only neurons that are **not shared globally** are treated as **language-specific
 
 ---
 
-## 📚 Reference Dataset
-For logit lens experiments, we used the dataset introduced in:  
+## 📚 References
 
-> Dumas et al. (2024). *Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers*.  
-> [[arXiv link]](https://arxiv.org/abs/2411.08745) | [Official repo](https://github.com/Butanium/llm-lang-agnostic)
+Our experiments draw on several key datasets and prior works:
 
+- **Logit Lens Experiments**  
+  Based on the dataset introduced in:  
+  > Dumas et al. (2024). *Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers*.  
+  > [[arXiv link]](https://arxiv.org/abs/2411.08745) | [Official repo](https://github.com/Butanium/llm-lang-agnostic)
 
-> Tan, Shaomu, Wu, Di, & Monz, Christof. (2024). *Neuron Specialization: Leveraging Intrinsic Task Modularity for Multilingual Machine Translation*.  
-> In **Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024)**, Miami, Florida, USA.  
-> [ACL Anthology](https://aclanthology.org/2024.emnlp-main.374/) | [DOI](https://doi.org/10.18653/v1/2024.emnlp-main.374)
+- **Codemixed Data Construction**  
+  Codemixed data is built from the **Google WMT24pp dataset**, extending language coverage to 55 languages and dialects:  
+  > Deutsch et al. (2025). *WMT24++: Expanding the Language Coverage of WMT24 to 55 Languages & Dialects*.  
+  > [[arXiv link]](https://arxiv.org/abs/2502.12404)
+
+- **Activation Frequency Experiments**  
+  Adapted in part from Tan et al. (2024), with modifications for our codemixed setting:  
+  > Tan, Shaomu, Wu, Di, & Monz, Christof. (2024). *Neuron Specialization: Leveraging Intrinsic Task Modularity for Multilingual Machine Translation*.  
+  > In **EMNLP 2024**, Miami, Florida, USA.  
+  > [ACL Anthology](https://aclanthology.org/2024.emnlp-main.374/) | [DOI](https://doi.org/10.18653/v1/2024.emnlp-main.374)
+
+---
+
+### 📖 BibTeX
 
 ```bibtex
 @misc{dumas2025separatingtonguethoughtactivation,
@@ -122,7 +136,16 @@ For logit lens experiments, we used the dataset introduced in:
     url          = {https://arxiv.org/abs/2411.08745}
 }
 
-```bibtex
+@misc{deutsch2025wmt24expandinglanguagecoverage,
+    title        = {WMT24++: Expanding the Language Coverage of WMT24 to 55 Languages & Dialects}, 
+    author       = {Daniel Deutsch and Eleftheria Briakou and Isaac Caswell and Mara Finkelstein and Rebecca Galor and Juraj Juraska and Geza Kovacs and Alison Lui and Ricardo Rei and Jason Riesa and Shruti Rijhwani and Parker Riley and Elizabeth Salesky and Firas Trabelsi and Stephanie Winkler and Biao Zhang and Markus Freitag},
+    year         = {2025},
+    eprint       = {2502.12404},
+    archivePrefix= {arXiv},
+    primaryClass = {cs.CL},
+    url          = {https://arxiv.org/abs/2502.12404}
+}
+
 @inproceedings{tan-etal-2024-neuron,
     title     = {Neuron Specialization: Leveraging Intrinsic Task Modularity for Multilingual Machine Translation},
     author    = {Tan, Shaomu and Wu, Di and Monz, Christof},
@@ -135,3 +158,4 @@ For logit lens experiments, we used the dataset introduced in:
     doi       = {10.18653/v1/2024.emnlp-main.374},
     pages     = {6506--6527}
 }
+
